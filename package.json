@@ -1,0 +1,36 @@
+{
+  "name": "devburger-interface",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Front-end da hamburgueria DevBurger - DevClub Full Stack",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src",
+    "format": "prettier --write src"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^3.9.1",
+    "axios": "^1.7.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.53.2",
+    "react-multi-carousel": "^2.8.5",
+    "react-router-dom": "^6.28.0",
+    "react-toastify": "^10.0.6",
+    "styled-components": "^6.1.13",
+    "yup": "^1.4.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.15.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "globals": "^15.12.0",
+    "prettier": "^3.3.3",
+    "vite": "^5.4.11"
+  }
+}
