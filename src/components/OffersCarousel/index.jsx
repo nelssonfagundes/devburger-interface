@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
-import { toast } from 'react-toastify'
 
 import { api } from '../../services/api'
 import { formatPrice } from '../../utils/formatPrice'
+import CardProduct from '../CardProduct'
 import { responsive } from '../CategoriesCarousel'
 import { Title } from '../CategoriesCarousel/styles'
-import { Container, OfferCard } from './styles'
+import { Container } from './styles'
 
 export default function OffersCarousel() {
   const [offers, setOffers] = useState([])
@@ -39,21 +39,7 @@ export default function OffersCarousel() {
       ) : (
         <Carousel responsive={responsive} infinite itemClass="carousel-item">
           {offers.map((product) => (
-            <OfferCard key={product.id}>
-              <img src={product.url} alt={product.name} />
-              <span className="badge">Oferta</span>
-              <div className="info">
-                <h3>{product.name}</h3>
-                <small>{product.category?.name}</small>
-                <strong>{product.formattedPrice}</strong>
-              </div>
-              <button
-                type="button"
-                onClick={() => toast.info(`${product.name}: o carrinho chega na parte II 🛒`)}
-              >
-                Adicionar
-              </button>
-            </OfferCard>
+            <CardProduct key={product.id} product={product} />
           ))}
         </Carousel>
       )}

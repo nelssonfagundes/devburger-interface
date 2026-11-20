@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import Carousel from 'react-multi-carousel'
+import { useNavigate } from 'react-router-dom'
 import 'react-multi-carousel/lib/styles.css'
 
+import { paths } from '../../constants/paths'
 import { api } from '../../services/api'
 import { CategoryCard, Container, Title } from './styles'
 
@@ -13,6 +15,7 @@ export const responsive = {
 
 export default function CategoriesCarousel() {
   const [categories, setCategories] = useState([])
+  const navigate = useNavigate()
 
   useEffect(() => {
     async function loadCategories() {
@@ -32,7 +35,11 @@ export default function CategoriesCarousel() {
       ) : (
         <Carousel responsive={responsive} infinite itemClass="carousel-item">
           {categories.map((category) => (
-            <CategoryCard key={category.id} $image={category.url}>
+            <CategoryCard
+              key={category.id}
+              $image={category.url}
+              onClick={() => navigate(`${paths.menu}?categoria=${category.id}`)}
+            >
               <p>{category.name}</p>
             </CategoryCard>
           ))}

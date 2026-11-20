@@ -1,9 +1,7 @@
 import styled from 'styled-components'
 
 import CategoriesCarousel from '../../components/CategoriesCarousel'
-import Header from '../../components/Header'
 import OffersCarousel from '../../components/OffersCarousel'
-import { theme } from '../../styles/globalStyles'
 
 const Banner = styled.section`
   display: flex;
@@ -15,22 +13,22 @@ const Banner = styled.section`
   background:
     radial-gradient(circle at 30% 40%, rgba(151, 88, 166, 0.55), transparent 55%),
     radial-gradient(circle at 75% 70%, rgba(92, 157, 43, 0.35), transparent 50%),
-    ${theme.darker};
+    ${({ theme }) => theme.darker};
 
   h1 {
     font-family: 'Road Rage', cursive;
     font-weight: 400;
     font-size: clamp(56px, 10vw, 110px);
     line-height: 1;
-    color: ${theme.white};
+    color: ${({ theme }) => theme.white};
 
     span {
-      color: ${theme.purple};
+      color: ${({ theme }) => theme.purple};
     }
   }
 
   p {
-    color: ${theme.light};
+    color: ${({ theme }) => theme.light};
     font-size: 18px;
     margin-top: 10px;
   }
@@ -38,9 +36,7 @@ const Banner = styled.section`
 
 export default function Home() {
   return (
-    <main>
-      <Header />
-
+    <>
       <Banner>
         <div>
           <h1>
@@ -52,6 +48,6 @@ export default function Home() {
 
       <CategoriesCarousel />
       <OffersCarousel />
-    </main>
+    </>
   )
 }

@@ -61,7 +61,7 @@ export default function Login() {
       )
 
       putUserData(data)
-      setTimeout(() => navigate('/'), 1500)
+      setTimeout(() => navigate(data.admin ? '/admin' : '/'), 1500)
     } catch {
       // a mensagem de erro já foi mostrada pelo toast
     }

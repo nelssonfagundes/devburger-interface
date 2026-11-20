@@ -1,15 +1,9 @@
 import { createGlobalStyle } from 'styled-components'
 
-export const theme = {
-  purple: '#9758a6',
-  purpleDark: '#6f357c',
-  green: '#5c9d2b',
-  dark: '#1f1f1f',
-  darker: '#121212',
-  light: '#f0f0f0',
-  white: '#ffffff',
-  gray: '#9a9a9d',
-}
+import { standardTheme } from './theme'
+
+// mantido para os componentes que importam as cores direto
+export const theme = standardTheme
 
 export default createGlobalStyle`
   * {

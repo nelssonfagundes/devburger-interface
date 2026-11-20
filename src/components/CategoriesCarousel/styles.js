@@ -40,6 +40,13 @@ export const CategoryCard = styled.div`
   align-items: flex-end;
   height: 220px;
   border-radius: 16px;
+  cursor: pointer;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
   padding: 16px;
   background:
     linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent 55%),
